@@ -1,0 +1,124 @@
+{
+  "profile": {
+    "name": "ওয়াদুদ হোসেন (NDC 26)",
+    "target": "বুয়েট ও মেডিকেল ভর্তি পরীক্ষা ২০২৬",
+    "institution": "নটর ডেম কলেজ, ঢাকা",
+    "batch": "HSC 2026",
+    "streak": 12,
+    "lastActive": "2026-10-28",
+    "level": 4,
+    "xp": 340,
+    "shield": false
+  },
+  "ui": {
+    "theme": "light",
+    "lang": "bn",
+    "motivationIdx": 2,
+    "tourDone": true,
+    "notif": {
+      "popup": true,
+      "beep": true
+    },
+    "reminderIdx": 0
+  },
+  "subjects": [
+    {
+      "id": "subj-phy",
+      "name": "পদার্থবিজ্ঞান",
+      "code": "PHY-101",
+      "color": "brand",
+      "topics": [
+        {
+          "id": "top-vector",
+          "name": "ভেক্টর ও গতিবিদ্যা",
+          "subtopics": [
+            { "id": "sub-dot-cross", "name": "ডট ও ক্রস গুণন", "formula": "A·B = AB cos(θ); |A×B| = AB sin(θ)" },
+            { "id": "sub-projectile", "name": "প্রাসের গতি", "formula": "H_max = (v₀² sin²θ)/(2g); R = (v₀² sin 2θ)/g" }
+          ]
+        },
+        {
+          "id": "top-mechanics",
+          "name": "নিউটনিয়ান বলবিদ্যা ও কাজ-শক্তি",
+          "subtopics": [
+            { "id": "sub-torque", "name": "টর্ক ও জড়তার ভ্রামক", "formula": "τ = Iα; L = Iω" },
+            { "id": "sub-work-energy", "name": "কাজ-শক্তি উপপাদ্য", "formula": "W = ΔK = 1/2 m(v² - u²)" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj-chem",
+      "name": "রসায়ন",
+      "code": "CHEM-102",
+      "color": "rose",
+      "topics": [
+        {
+          "id": "top-quantum",
+          "name": "গুণগত রসায়ন ও পর্যায়বৃত্ত ধর্ম",
+          "subtopics": [
+            { "id": "sub-quantum-nos", "name": "কোয়ান্টাম সংখ্যা ও অরবিটাল", "formula": "n, l, m, s" },
+            { "id": "sub-solubility", "name": "দ্রাব্যতা ও দ্রাব্যতা গুণফল (Ksp)", "formula": "Ksp = [A⁺]ᵃ[B⁻]ᵇ" }
+          ]
+        }
+      ]
+    }
+  ],
+  "mcqs": [
+    {
+      "id": "mcq-p1",
+      "subjectId": "subj-phy",
+      "topicId": "top-vector",
+      "subtopicId": "sub-dot-cross",
+      "q": "দুটি ভেক্টর A এবং B পরস্পরের উপর লম্ব হলে তাদের ডট গুণনের মান কত হবে?",
+      "options": ["শূন্য (০)", "AB", "১ (এক)", "-AB"],
+      "correct": 0,
+      "explanation": "A · B = AB cos(θ)। যেহেতু ভেক্টরদ্বয় পরস্পর লম্ব, θ = 90°। cos(90°) = 0, সুতরাং A · B = 0।"
+    },
+    {
+      "id": "mcq-p2",
+      "subjectId": "subj-phy",
+      "topicId": "top-vector",
+      "subtopicId": "sub-projectile",
+      "q": "কোন কোণে নিক্ষিপ্ত প্রাসের পাল্লা (Horizontal Range) সর্বোচ্চ হয়?",
+      "options": ["30°", "45°", "60°", "90°"],
+      "correct": 1,
+      "explanation": "পাল্লার সূত্র R = (v₀² sin 2θ)/g। sin(2θ) এর সর্বোচ্চ মান ১ যখন 2θ = 90°, অর্থাৎ θ = 45°।"
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "fc-1",
+      "subjectId": "subj-phy",
+      "topicId": "top-vector",
+      "subtopicId": "sub-dot-cross",
+      "front": "লব্ধির সর্বোচ্চ ও সর্বনিম্ন মান",
+      "back": "R_max = P + Q (যখন কোণ α = 0°)\nR_min = |P - Q| (যখন কোণ α = 180°)",
+      "box": 1,
+      "due": "2026-10-28",
+      "rep": 3
+    }
+  ],
+  "schedule": [
+    { "id": "sch-1", "day": 6, "time": "08:30", "title": "পদার্থবিজ্ঞান ১ম পত্র গাণিতিক সমস্যা" }
+  ],
+  "todos": [
+    { "id": "td-1", "title": "পদার্থবিজ্ঞান ২য় অধ্যায়ের সব বিগত বছরের বোর্ড MCQ শেষ করা", "due": "2026-10-28", "time": "14:00", "priority": "high", "done": false }
+  ],
+  "notes": [
+    { "id": "note-1", "title": "চলতড়িৎ মনে রাখার শর্টকাট টেকনিক", "body": "হুইটস্টোন ব্রিজ সাম্যাবস্থায় থাকলে মাঝের গ্যালভানোমিটার দিয়ে কারেন্ট শূন্য।", "tags": ["Physics", "Shortcuts"] }
+  ],
+  "habits": [
+    { "id": "hab-1", "title": "প্রতিদিন ফজরের পর ২ ঘণ্টা নিবিড় অধ্যয়ন", "streak": 14, "log": ["2026-10-28"] }
+  ],
+  "alarms": [
+    { "id": "alm-1", "time": "05:00", "label": "ভোরের নিরবতায় পড়াশোনা শুরু", "days": [0,1,2,3,4,5,6], "active": true, "ringtone": "Classic Bell" }
+  ],
+  "timerSessions": [
+    { "id": "sess-1", "minutes": 45, "date": "2026-10-28", "subject": "পদার্থবিজ্ঞান" }
+  ],
+  "mistakeVault": [],
+  "attempts": [],
+  "quotes": [
+    { "bn": "পরিশ্রম কখনো বৃথা যায় না, সময়ের ব্যবধানে সাফল্য ধরা দেয়।", "en": "Hard work always pays off with time." }
+  ]
+}
