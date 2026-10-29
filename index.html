@@ -109,6 +109,15 @@
       font-variant-numeric: tabular-nums;
     }
 
+    /* Hide native scrollbars cleanly across all browsers while keeping smooth touch/mouse scrolling */
+    * {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    *::-webkit-scrollbar {
+      display: none;
+    }
+
     /* Fixed full-screen Modal support (Portalled to document.body) */
     .modal-backdrop {
       position: fixed;
