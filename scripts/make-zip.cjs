@@ -7,7 +7,7 @@ zip.addLocalFolder(process.cwd(), '', (filename) => {
          !filename.includes('.git') && 
          !filename.includes('dist') && 
          !filename.includes('.aistudio') && 
-         !filename.includes('sonkolpo-os-v4-updated.zip');
+         !filename.endsWith('.zip');
 });
 
 zip.writeZip('./public/sonkolpo-os-v4-updated.zip');
