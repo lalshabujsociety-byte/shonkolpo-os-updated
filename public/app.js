@@ -2548,7 +2548,67 @@ function MCQEditor({
       }
       onSave(q);
     }
-  }, "Save")));
+  }, "Save")));}
+}
+function AIBulkPromptHelper({ mode = 'mcq' }) {
+  const [copied, setCopied] = useState(false);
+  const promptText = mode === 'mcq'
+    ? `Please analyze this textbook page image and extract all MCQs. Return them strictly in this text format:
+Q: [Question text]
+A) [Option 1]
+B) [Option 2] *
+C) [Option 3]
+D) [Option 4]
+---
+(Mark correct answer with *, separate each MCQ with ---)`
+    : `Please analyze this textbook page image and extract flashcards. Return them strictly in this text format:
+Front :: Back
+(One per line)`;
+
+  function copyPrompt() {
+    navigator.clipboard.writeText(promptText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+    toast('Prompt copied!', 'success');
+  }
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: "p-3 rounded-xl bg-brand-50/80 dark:bg-brand-950/40 border border-brand-200 dark:border-brand-800/60 text-xs space-y-2 mb-2"
+  },
+    /*#__PURE__*/React.createElement("div", { className: "flex items-center justify-between font-semibold text-brand-900 dark:text-brand-300" },
+      /*#__PURE__*/React.createElement("div", { className: "flex items-center gap-1.5" },
+        /*#__PURE__*/React.createElement(Icon, { name: "sparkles", size: 16, className: "text-brand-600" }),
+        /*#__PURE__*/React.createElement("span", null, "1-Click AI Prompt Generator (ChatGPT / Gemini)")
+      ),
+      /*#__PURE__*/React.createElement("div", { className: "flex items-center gap-1.5" },
+        /*#__PURE__*/React.createElement("a", {
+          href: "https://chatgpt.com",
+          target: "_blank",
+          rel: "noreferrer",
+          className: "px-2 py-1 rounded bg-brand-600 text-white hover:bg-brand-500 font-medium"
+        }, "ChatGPT ↗"),
+        /*#__PURE__*/React.createElement("a", {
+          href: "https://gemini.google.com",
+          target: "_blank",
+          rel: "noreferrer",
+          className: "px-2 py-1 rounded bg-teal-600 text-white hover:bg-teal-500 font-medium"
+        }, "Gemini ↗")
+      )
+    ),
+    /*#__PURE__*/React.createElement("div", { className: "text-slate-600 dark:text-slate-300" },
+      "Upload your book page photo to ChatGPT or Gemini with this prompt, then copy the result here:"
+    ),
+    /*#__PURE__*/React.createElement("div", { className: "bg-white dark:bg-slate-900 p-2 rounded border border-slate-200 dark:border-slate-800 font-mono text-[11px] text-slate-700 dark:text-slate-200 select-all" },
+      promptText
+    ),
+    /*#__PURE__*/React.createElement("div", { className: "flex justify-end" },
+      /*#__PURE__*/React.createElement(Btn, {
+        size: "sm",
+        onClick: copyPrompt,
+        className: "bg-brand-600 text-white hover:bg-brand-500"
+      }, copied ? 'Copied! ✓' : 'Copy AI Prompt 📋')
+    )
+  );
 }
 function BulkMCQ({
   onDone
@@ -2604,7 +2664,7 @@ D) 6`;
   }
   return /*#__PURE__*/React.createElement("div", {
     className: "grid gap-3"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(AIBulkPromptHelper, { mode: "mcq" }), /*#__PURE__*/React.createElement("div", {
     className: "text-xs text-slate-500"
   }, "Paste multiple MCQs, separated by ", /*#__PURE__*/React.createElement("code", null, "---"), ". Mark the correct option with a trailing ", /*#__PURE__*/React.createElement("code", null, "*"), "."), /*#__PURE__*/React.createElement(FormatBlock, {
     text: example,
@@ -3669,7 +3729,7 @@ Speed of light :: 3x10^8 m/s`;
   }
   return /*#__PURE__*/React.createElement("div", {
     className: "grid gap-3"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement(AIBulkPromptHelper, { mode: "flashcard" }), /*#__PURE__*/React.createElement("div", {
     className: "text-xs text-slate-500"
   }, "One card per line. Separate front and back with ", /*#__PURE__*/React.createElement("code", null, "::"), " or ", /*#__PURE__*/React.createElement("code", null, "|"), "."), /*#__PURE__*/React.createElement(FormatBlock, {
     text: example,
